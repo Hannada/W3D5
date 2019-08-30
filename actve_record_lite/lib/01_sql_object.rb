@@ -51,8 +51,12 @@ class SQLObject
   end
 
   def initialize(params = {})
-  # raise "unknown attribute #{attr_name}"
-  @attribute ||= params
+    params.each do |attr_name, value|
+      attr_name = attr_name.to_sym 
+      self.column.each do |name|
+        
+      end
+    end
   end
 
   def attributes
